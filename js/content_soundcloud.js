@@ -9,7 +9,7 @@ chrome.extension.onRequest.addListener(function(request){
 		// Chrome extensions can't access page JS. Except they can, via the location.
 		console.log('Playing/stopping currently playing track');
 		location = "javascript:$('a.play.playing').click()"	
-		last_played_track = $current_playbutton.parent().parent().parent().attr('data-sc-track');
+		last_played_track = $current_playbutton.parents().attr('data-sc-track');
 		console.log(last_played_track);
 	} else {
 		var $last_playbutton = $("div.player[data-sc-track="+last_played_track+"]").find('a.play')
